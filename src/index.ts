@@ -217,7 +217,8 @@ export class DrupalJsonApiParams implements DrupalJsonApiParamsInterface {
     operator: string = '=',
     memberOf?: string,
   ): DrupalJsonApiParams {
-    const name = this.getIndexId(this.data.filter, path);
+    //const name = this.getIndexId(this.data.filter, path);
+    const name = `${path}-${value}`;
 
     // Allow null values only for IS NULL and IS NOT NULL operators.
     if (value === null) {
